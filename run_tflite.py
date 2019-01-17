@@ -42,10 +42,6 @@ def post_process(tflite_output, label_file):
     prediction = np.argmax(predictions)
 
     # convert id to class name
-    labels = dict()
-    with open(label_file) as f:
-        for i, line in enumerate(f):
-            labels[i] = line
     print("The image prediction result is: id " + str(prediction) + " name: " + labels[prediction])
 
 if __name__ == "__main__":
